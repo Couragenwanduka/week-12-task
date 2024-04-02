@@ -1,5 +1,5 @@
-import room from '../model/Room.js';
-import Roomtypes from '../model/Roomtype.js';
+import room from '../model/Room';
+import Roomtypes from '../model/Roomtype';
 import { Request } from 'express';
 
 // Function to create a new room type

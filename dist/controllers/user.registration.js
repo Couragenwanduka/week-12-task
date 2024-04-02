@@ -105,7 +105,6 @@ const deleteUsers = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
             throw new Error("please enter an email address");
         }
         const getuserid = yield (0, user_service_1.findUserByEmail)(email);
-        console.log(getuserid);
         if (!getuserid) {
             const error = new Error("user not found");
             error.statusCode = 400;

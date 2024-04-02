@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const Roomtype_1 = __importDefault(require("./Roomtype")); // Assuming 'Roomtype' is the correct name of the model
+const Roomtype_1 = __importDefault(require("./Roomtype"));
 const roomSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -35,7 +35,7 @@ const roomSchema = new mongoose_1.Schema({
     },
     roomType: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: Roomtype_1.default, // Ensure this matches the actual model name
+        ref: Roomtype_1.default,
         required: true
     },
     description: {

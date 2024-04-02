@@ -1,4 +1,4 @@
-import   {signUpSchema,loginSchema} from '../config/joi.js'
+import   {signUpSchema,loginSchema} from '../config/joi'
 import Joi from 'joi';
 
 

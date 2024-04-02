@@ -13,12 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteRoomById = exports.updateRoomById = exports.findRoomById = exports.filterRooms = exports.getAllRoomTypes = exports.createRoom = exports.findRoomTypeByName = exports.findRoomByName = exports.createRoomType = void 0;
-const Room_js_1 = __importDefault(require("../model/Room.js"));
-const Roomtype_js_1 = __importDefault(require("../model/Roomtype.js"));
+const Room_1 = __importDefault(require("../model/Room"));
+const Roomtype_1 = __importDefault(require("../model/Roomtype"));
 // Function to create a new room type
 const createRoomType = (name) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const newRoomtype = new Roomtype_js_1.default({
+        const newRoomtype = new Roomtype_1.default({
             name,
         });
         yield newRoomtype.save();
@@ -32,7 +32,7 @@ exports.createRoomType = createRoomType;
 // Function to find a room by name
 const findRoomByName = (name) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Room_js_1.default.findOne({ name });
+        const result = yield Room_1.default.findOne({ name });
         return result;
     }
     catch (error) {
@@ -42,7 +42,7 @@ const findRoomByName = (name) => __awaiter(void 0, void 0, void 0, function* () 
 exports.findRoomByName = findRoomByName;
 const findRoomTypeByName = (name) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Roomtype_js_1.default.findOne({ name });
+        const result = yield Roomtype_1.default.findOne({ name });
         return result;
     }
     catch (error) {
@@ -52,7 +52,7 @@ exports.findRoomTypeByName = findRoomTypeByName;
 // Function to create a new room
 const createRoom = (name, roomType, description, price) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const newRoom = new Room_js_1.default({
+        const newRoom = new Room_1.default({
             name,
             roomType,
             description,
@@ -68,7 +68,7 @@ exports.createRoom = createRoom;
 // Function to get all rooms
 const getAllRoomTypes = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Roomtype_js_1.default.find();
+        const result = yield Roomtype_1.default.find();
         return result;
     }
     catch (error) {
@@ -95,7 +95,7 @@ const filterRooms = (request) => __awaiter(void 0, void 0, void 0, function* () 
                 filters.price.$lte = parseInt(request.query.maxprice);
             }
         }
-        const filteredRooms = yield Room_js_1.default.find(filters);
+        const filteredRooms = yield Room_1.default.find(filters);
         return filteredRooms;
     }
     catch (error) {
@@ -106,7 +106,7 @@ exports.filterRooms = filterRooms;
 // Function to find a room by ID
 const findRoomById = (roomId) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Room_js_1.default.findById(roomId);
+        const result = yield Room_1.default.findById(roomId);
         return result;
     }
     catch (error) {
@@ -117,7 +117,7 @@ exports.findRoomById = findRoomById;
 // Function to update a room by ID
 const updateRoomById = (id, name, price) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const updatedRoom = yield Room_js_1.default.findOneAndUpdate({ _id: id }, { name, price }, { new: true });
+        const updatedRoom = yield Room_1.default.findOneAndUpdate({ _id: id }, { name, price }, { new: true });
         return updatedRoom;
     }
     catch (error) {
@@ -128,7 +128,7 @@ exports.updateRoomById = updateRoomById;
 // Function to delete a room by ID
 const deleteRoomById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const deletedRoom = yield Room_js_1.default.findByIdAndDelete(id);
+        const deletedRoom = yield Room_1.default.findByIdAndDelete(id);
         return deletedRoom;
     }
     catch (error) {

@@ -1,6 +1,6 @@
-import { createRoom, createRoomType, findRoomByName,  } from '../service/room.service.js'
-import {findRoomById, updateRoomById, deleteRoomById} from '../service/room.service.js';
-import{ filterRooms,   getAllRoomTypes,findRoomTypeByName} from '../service/room.service.js';
+import { createRoom, createRoomType, findRoomByName,  } from '../service/room.service'
+import {findRoomById, updateRoomById, deleteRoomById} from '../service/room.service';
+import{ filterRooms,   getAllRoomTypes,findRoomTypeByName} from '../service/room.service';
 import { NextFunction, Request,Response } from 'express';
 /*
 roomtype function is used to register a roomtype 

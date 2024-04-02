@@ -25,7 +25,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "nodemon index.ts",
+    "dev": "nodemon dist/index.js",
     "local": "npm run build"
   },
   "author": "",

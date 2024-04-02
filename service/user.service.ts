@@ -1,5 +1,5 @@
 import { emit } from 'process';
-import {hashPassword ,comparePassword} from '../config/bcripty';
+import {hashPassword} from '../config/bcripty';
 import User from '../model/user';
 
 
